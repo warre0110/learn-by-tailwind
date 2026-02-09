@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import Card from './Card'
 import CardPage from './CardPage'
+import { Button } from "@/components/ui/button"
 
 const { useState } = React
 
@@ -16,11 +17,12 @@ const App = () => {
     console.log(hello, test)
 
     return (
-        <div className="w-full h-full bg-neutral-900 text-center" data-name="App">
+        <div className="w-full h-full text-center" data-name="App">
             <CardPage>
                 <Card>
                     <div className="text-neutral-600">Hello World!</div>
                     <h1>Learn by Tailwind v1.03</h1>
+                    <Button>Click me</Button>
                     <div className="card">
                         <button
                             onClick={() => setCount(count => count + 1)}
