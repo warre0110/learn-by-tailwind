@@ -9,7 +9,7 @@ type Props = {
  */
 const Card = (props: Props) => {
     return (
-        <div className="text-center rounded-lg border" data-name="Card">
+        <div className="text-center rounded-lg border p-4" data-name="Card">
             { props.children }
         </div>
     )

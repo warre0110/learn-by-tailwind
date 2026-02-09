@@ -19,7 +19,7 @@ const App = () => {
         <div className="w-full h-full bg-neutral-900 text-center" data-name="App">
             <CardPage>
                 <Card>
-                    <div className="text-3xl font-bold underline bg-sky-600">Hello World!</div>
+                    <div className="text-neutral-600">Hello World!</div>
                     <h1>Learn by Tailwind v1.03</h1>
                     <div className="card">
                         <button
