@@ -2,7 +2,9 @@ import React from 'react'
 import './App.css'
 import Card from './Card'
 import CardPage from './CardPage'
-import { Button } from "@/components/ui/button"
+//import TestCardContent from './TestCardContent'
+import MemoryTable from './MemoryTable'
+import { memoryTestData } from '@/models/memory/MemoryTestData'
 
 const { useState } = React
 
@@ -17,23 +19,10 @@ const App = () => {
     console.log(hello, test)
 
     return (
-        <div className="w-full h-full text-center" data-name="App">
+        <div className="h-full w-full text-center" data-name="App">
             <CardPage>
-                <Card>
-                    <div className="text-neutral-600">Hello World!</div>
-                    <h1>Learn by Tailwind v1.03</h1>
-                    <Button>Click me</Button>
-                    <div className="card">
-                        <button
-                            onClick={() => setCount(count => count + 1)}
-                            className="px-4 py-2 bg-blue-600 text-white rounded">
-                            count is {count}
-                        </button>
-                        <p>
-                            Edit <code>src/App.tsx</code> and save to test HMR
-                        </p>
-                    </div>
-                    <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+                <Card className="gap-4">
+                    <MemoryTable data={memoryTestData} />
                 </Card>
             </CardPage>
         </div>

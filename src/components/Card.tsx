@@ -1,7 +1,14 @@
 import type { ReactNode } from 'react'
-import { Card as CardUi, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+    Card as CardUi,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle
+} from '@/components/ui/card'
 
 type Props = {
+    className?: string
     children?: ReactNode
 }
 
@@ -15,14 +22,14 @@ const Card = (props: Props) => {
     //    </div>
     //)
     return (
-        <CardUi size="sm" className="mx-auto w-full max-w-sm">
+        <CardUi
+            className={`mx-auto w-full max-w-sm ${props.className}`}
+            data-name="Card">
             <CardHeader>
-                <CardTitle>Small Card</CardTitle>
-                <CardDescription>This card uses the small size variant.</CardDescription>
+                <CardTitle>て form</CardTitle>
+                <CardDescription>How to turn Japanese verbs into the て form.</CardDescription>
             </CardHeader>
-            <CardContent>
-                {props.children}
-            </CardContent>
+            <CardContent>{props.children}</CardContent>
         </CardUi>
     )
 }
