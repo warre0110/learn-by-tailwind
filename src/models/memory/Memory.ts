@@ -10,5 +10,13 @@ export type Memory = {
     questionF?: string  // furigana
     answer?:  string   // '会って', '食べて'
     description?: string  // any other details
+    transitive?: string  // 'i', 't'
 }
+
+export type MemoryPage = {
+    title?: string
+    description?: string
+    content?: Memory[]  // table
+}
+
 

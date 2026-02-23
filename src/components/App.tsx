@@ -1,15 +1,16 @@
 import React from 'react'
-import './App.css'
+
 import Card from './Card'
 import CardPage from './CardPage'
-//import TestCardContent from './TestCardContent'
 import MemoryTable from './MemoryTable'
 import { memoryTestData } from '@/models/memory/MemoryTestData'
+
+import './App.css'
 
 const { useState } = React
 
 /*
- *
+ * - - - - - 
  */
 const App = () => {
     const [count, setCount] = useState(0)
