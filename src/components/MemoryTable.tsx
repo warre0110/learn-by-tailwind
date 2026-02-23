@@ -1,37 +1,36 @@
-import type { Memory } from '@/models/memory/Memory'
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
 import { uniq } from '@/Utils'
-
-const NoData: Memory[] = []
+import type { QuestionTable } from '@/models/memory/Question'
 
 type Props = {
     className?: string
-    data?: Memory[]
+    table?: QuestionTable
 }
 
 /*
  * - - - - - - - - - -
  */
 const MemoryTable = (props: Props) => {
-    const data = props.data || NoData
+    const table = props.table || null
+    const rows = table?.rows || []
 
-    const groups = uniq(data.map(d => d.group || '')) // keep original order
+    const groups = uniq(rows.map(d => d.group || '')) // keep original order
 
     return (
         <div data-name="MemoryTable">
-            {groups.map(group => (
+            { groups.map(group => (
                 <Table className="text-lg">
                     <TableBody>
-                        {data.filter(d => d.group === group).map((m, index) => (
-                            <TableRow key={m.question}>
-                                <TableCell className="font-medium">{index === 0 ? m.group : ''}</TableCell>
-                                <TableCell>{m.question}</TableCell>
-                                <TableCell>{m.answer}</TableCell>
+                        { rows.filter(r => r.group === group).map((r, index) => (
+                            <TableRow key={r.question}>
+                                <TableCell className="font-medium">{index === 0 ? r.group : ''}</TableCell>
+                                <TableCell>{r.question}</TableCell>
+                                <TableCell>{r.answer}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
-            ))}
+            )) }
         </div>
     )
 }

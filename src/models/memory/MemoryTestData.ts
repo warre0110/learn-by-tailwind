@@ -1,6 +1,6 @@
-import type { Memory, MemoryPage } from './Memory'
+import type { QuestionRow, QuestionPage, QuestionTable } from './Question'
 
-const godanVerbs: Memory[] = [
+const godanVerbs: QuestionRow[] = [
     // Godan - って
     {
         group: 'Godan',
@@ -89,7 +89,7 @@ const godanVerbs: Memory[] = [
     }
 ]
 
-const ichidanVerbs: Memory[] = [
+const ichidanVerbs: QuestionRow[] = [
     // Ichidan - て
     {
         group: 'Ichidan',
@@ -120,7 +120,7 @@ const ichidanVerbs: Memory[] = [
     }
 ]
 
-const irregularVerbs: Memory[] = [
+const irregularVerbs: QuestionRow[] = [
     // Irregular
     {
         group: 'Irregular',
@@ -151,11 +151,17 @@ const irregularVerbs: Memory[] = [
     }
 ]
 
-export const memoryTestData: Memory[] = [
-    ...godanVerbs, ...ichidanVerbs, ...irregularVerbs
-]
+const testTable: QuestionTable = {
+    rows: [...godanVerbs, ...ichidanVerbs, ...irregularVerbs]
+}
 
-export const testPages: MemoryPage[] = [
+export const testPage: QuestionPage = {
+    title: 'て form',
+    description: 'How to turn Japanese verbs into the て form.',
+    content: testTable
+}
+
+/*export const testPages: MemoryPage[] = [
     {
         title: 'て form (Godan)',
         description: 'How to turn Japanese verbs into the て form.',
@@ -171,4 +177,4 @@ export const testPages: MemoryPage[] = [
         description: 'How to turn Japanese verbs into the て form.',
         content: irregularVerbs
     }
-];
+];*/

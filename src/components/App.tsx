@@ -3,11 +3,14 @@ import React from 'react'
 import Card from './Card'
 import CardPage from './CardPage'
 import MemoryTable from './MemoryTable'
-import { memoryTestData } from '@/models/memory/MemoryTestData'
+import { testPage } from '@/models/memory/MemoryTestData'
+
+import type { QuestionTable } from '@/models/memory/Question';
 
 import './App.css'
 
 const { useState } = React
+const testTable = testPage.content as QuestionTable;
 
 /*
  * - - - - - 
@@ -23,7 +26,7 @@ const App = () => {
         <div className="h-full w-full text-center" data-name="App">
             <CardPage>
                 <Card className="gap-4">
-                    <MemoryTable data={memoryTestData} />
+                    <MemoryTable table={testTable} />
                 </Card>
             </CardPage>
         </div>
